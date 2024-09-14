@@ -1,0 +1,49 @@
+/* Custom Popup Styling */
+.custom-popup .leaflet-popup-content-wrapper {
+  background-color: #f9f9f9; /* Light background for popup */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.custom-popup .leaflet-popup-content {
+  font-family: 'Poppins', sans-serif; /* Font for consistency */
+  padding: 10px; /* Padding inside the popup */
+  text-align: center; /* Center text inside popup */
+}
+
+.custom-popup .leaflet-popup-tip {
+  background-color: #f9f9f9; /* Match the background of popup */
+}
+
+/* Optional custom map container borders */
+.leaflet-container {
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Animation for marker drop effect */
+.animated-marker {
+  transition: transform 0.5s ease-in; /* Smooth drop effect */
+  transform: translateY(-20px); /* Initial position above */
+}
+
+.leaflet-marker-icon.leaflet-zoom-animated {
+  transform: translateY(0); /* Final position */
+}
+
+/* Popup appearance */
+.leaflet-popup-content-wrapper {
+  background: #f9f9f9; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for popup */
+}
+
+.leaflet-popup-content {
+  font-family: 'Poppins', sans-serif; /* Font styling */
+  padding: 10px; /* Padding */
+  text-align: center; /* Centered text */
+}
+
+.leaflet-popup-tip {
+  background: #f9f9f9; /* Matching background for tip */
+}
