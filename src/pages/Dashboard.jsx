@@ -1,9 +1,15 @@
 import React from 'react'
+import ManageEmp from '../components/ManageEmp'
+import Navbar from '../components/Navbar';
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
+    <div>
+      <Navbar />
+
+      <ManageEmp />
+    </div>
+  );
 }
 
 export default Dashboard

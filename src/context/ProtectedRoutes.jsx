@@ -1,16 +1,12 @@
-import React from "react";
-import { Outlet, Navigate } from "react-router-dom";
-import { useAuth } from "./AuthContext"; // Adjust the path as needed
+// ProtectedRoutes.js
+import { useAuth } from "./AuthContext";
+import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = () => {
-  const { currentUser } = useAuth();
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useAuth();
+  console.log("Is authenticated:", isAuthenticated); // Log authentication state
 
-  if (!currentUser) {
-    // Redirect them to the login page if not logged in
-    return <Navigate to="/" />;
-  }
-
-  return <Outlet />;
+  return isAuthenticated ? children : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;

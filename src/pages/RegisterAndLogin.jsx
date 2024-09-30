@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const RegisterAndLogin = () => {
@@ -34,10 +38,12 @@ const RegisterAndLogin = () => {
   };
 
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 font-['Poppins']">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <div className="text-2xl text-center font-bold uppercase">
-          <p className="text-primary font-['Outfit'] font-extrabold">Finderr.</p>
+          <p className="text-primary font-['Outfit'] font-extrabold">
+            Finderr.
+          </p>
         </div>
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           {login ? "Sign In" : "Sign Up"} to your account

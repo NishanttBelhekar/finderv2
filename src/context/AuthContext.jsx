@@ -1,21 +1,20 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+// AuthContext.jsx
+import React, { createContext, useEffect, useState, useContext } from "react";
+import { database } from "../firebase/FirebaseConfig"; // Adjust the path here
+import { onAuthStateChanged } from "firebase/auth";
 
-// Create context
 const AuthContext = createContext();
 
-// Provide context to children
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const auth = getAuth();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(database, (user) => {
       setCurrentUser(user);
     });
 
-    return () => unsubscribe();
-  }, [auth]);
+    return () => unsubscribe(); // Cleanup subscription on unmount
+  }, []);
 
   return (
     <AuthContext.Provider value={{ currentUser }}>
@@ -24,5 +23,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use auth context
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  return useContext(AuthContext);
+};

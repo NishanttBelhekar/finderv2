@@ -55,7 +55,7 @@ const Main = () => {
       {/* Body */}
       <div className="flex flex-col h-screen py-4 md:flex-row md:space-x-4">
         {/* Right side: Map (comes first on mobile) */}
-        <div className="w-full h-full p-4 order-first md:order-none md:w-1/2 md:p-6 md:min-h-[600px] min-h-[400px]">
+        <div className="w-full h-full p-4 md:w-1/2 md:p-6 md:min-h-[600px] min-h-[400px] z-0">
           <Map selectedAddress={selectedAddress} profile={selectedProfile} />
         </div>
 

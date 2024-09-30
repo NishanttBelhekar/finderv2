@@ -3,25 +3,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterAndLogin from "../pages/RegisterAndLogin";
 import Main from "../pages/Main";
 import Dashboard from "../pages/Dashboard";
-import { AuthProvider } from "../context/AuthContext"; // Adjust the path as needed
-import ProtectedRoute from "../context/ProtectedRoutes"; // Adjust the path as needed
+import { AuthProvider } from "../context/AuthContext";
+import { ProfileProvider } from "../context/ProfileContext";
 
-function App() {
+function PasswordLoginWithFirebase() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RegisterAndLogin />} />
-
-          {/* Protected routes */}
-          <Route element={<ProtectedRoute />}>
+      <ProfileProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<RegisterAndLogin />} />
             <Route path="/home" element={<Main />} />
             <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </ProfileProvider>
     </AuthProvider>
   );
 }
 
-export default App;
+export default PasswordLoginWithFirebase;

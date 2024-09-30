@@ -1,20 +1,33 @@
-import React from 'react'
-import Navbar from './components/Navbar';
-import Main from './pages/Main';
-import './App.css'
-import Footer from './components/Footer';
-import PasswordLoginWithFirebase from './firebase/PasswordLoginWithFirebase';
+// import React from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import RegisterAndLogin from "../pages/RegisterAndLogin";
+// import Main from "../pages/Main";
+// import Dashboard from "../pages/Dashboard";
+// import { AuthProvider } from "../context/AuthContext";
+// import { ProfileProvider } from "../context/ProfileContext";
 
-const App = () => {
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { ProfileProvider } from "./context/ProfileContext";
+import RegisterAndLogin from "./pages/RegisterAndLogin";
+import Main from "./pages/Main";
+import Dashboard from "./pages/Dashboard";
+import './App.css'
+
+function App() {
   return (
-    <div className='overflow-x-hidden font-["Poppins"]'>
-     {/* <Navbar />
-     <Main />
-     
-     <Footer /> */}
-     <PasswordLoginWithFirebase />
-    </div>
+    <AuthProvider>
+      <ProfileProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<RegisterAndLogin />} />
+            <Route path="/home" element={<Main />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
+      </ProfileProvider>
+    </AuthProvider>
   );
 }
 
-export default App
+export default App;

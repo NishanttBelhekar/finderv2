@@ -1,6 +1,6 @@
 export const NavbarMenu = [
-  { id: 1, title: "Home", link: "/" },
-  { id: 2, title: "Services", link: "#" },
+  { id: 1, title: "Home", link: "/home" },
+  { id: 2, title: "Dashboard", link: "/dashboard" },
 ];
 
 const profiles = [
